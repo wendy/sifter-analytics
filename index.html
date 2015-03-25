@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      canvas {
+        display: block;
+      }
+      #score {
+        height:200px;
+        width:200px;
+        position: absolute;
+        line-height: 200px; 
+        text-align: center;
+        font-size: 70px;
+        color: "#202020";
+      }
+      .percentage {
+        font-size: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="score"></div>
+    <canvas id="myDoughnutChart" width="200" height="200"></canvas>
+    <canvas id="myLineChart" width="200" height="200"></canvas>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="chartData.js"></script>
+    <script src="chartScript.js"></script>
+  </body>
+</html>
