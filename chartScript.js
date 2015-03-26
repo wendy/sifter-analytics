@@ -162,5 +162,14 @@ var myLineChart = new Chart(ctx2).Line(lineData, lineOptions);
 
 setTimeout(function(){
   $('#score').text(score);
+  var recyclePer = Math.round( (allRecycleData / allData / recycleGoal) * 100);
+  var compostPer = Math.round( (allCompostData / allData / compostGoal) * 100);
+  $('.progress-bar-info').attr('style', 'width:' + recyclePer + '%');
+  $('.progress-bar-info').text(recyclePer + '%');
+  $('.progress-bar-success').attr('style', 'width:' + compostPer + '%');
+  $('.progress-bar-success').text(compostPer + '%');
+
 }, 800)
+
+
 

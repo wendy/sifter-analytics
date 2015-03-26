@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <style>
       canvas {
         display: block;
@@ -14,16 +15,34 @@
         font-size: 70px;
         color: "#202020";
       }
-      .percentage {
-        font-size: 70px;
+      .bar {
+        width: 200px;
       }
+
     </style>
+
   </head>
   <body>
     <div id="score"></div>
     <canvas id="myDoughnutChart" width="200" height="200"></canvas>
     <canvas id="myLineChart" width="200" height="200"></canvas>
+    Goals:
+    <div class="bar progress recycle">
+      <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+      0%
+      </div>
+    </div>
+
+    <div class="bar progress compost">
+      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+      0%
+      </div>
+    </div>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="chartData.js"></script>
     <script src="chartScript.js"></script>
