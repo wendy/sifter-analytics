@@ -172,19 +172,20 @@ var changeGoal = function(){
   var compostPer = Math.round( (allCompostData / allData ) * 100);
   var combine = Math.floor(score/100/goal * 100);
   console.log(score, goal, combine);
-  var goalLine = goal * 200; 
+  var goalLine = (goal * 200) - 1; 
 
   $('.progress-bar-info').attr('style', 'width:' + recyclePer + '%');
   $('.progress-bar-success').attr('style', 'width:' + compostPer + '%');
   $('.processPer').text(combine + '%');
   $('.progress-bar-goal').attr('style', 'left:'+ goalLine +'px');
+  $('.form-control').attr('placeholder', numgoal);
   // $('.progress-bar-success').text(compostPer + '%');
 }
 
 $(document).ready(function(){
   $('.btn').on('click', function(){
-    console.log('hello')
-    numgoal = $('.form-control').val()
+    numgoal = $('.form-control').val();
+    $('.form-control').val('');
     changeGoal();
   })
 });
