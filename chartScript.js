@@ -1,3 +1,4 @@
+var numgoal = 70;
 var ctx = $("#myDoughnutChart").get(0).getContext("2d");
 var ctx2 = $("#myLineChart").get(0).getContext("2d");
 
@@ -162,9 +163,15 @@ var myLineChart = new Chart(ctx2).Line(lineData, lineOptions);
 
 setTimeout(function(){
   $('#score').text(score);
+  changeGoal();
+}, 800)
+
+var changeGoal = function(){
+  var goal = numgoal / 100;
   var recyclePer = Math.round( (allRecycleData / allData ) * 100);
   var compostPer = Math.round( (allCompostData / allData ) * 100);
-  var combine = function(){ return recyclePer + compostPer > goal * 100 ? 100: () };
+  var combine = Math.floor(score/100/goal * 100);
+  console.log(score, goal, combine);
   var goalLine = goal * 200; 
 
   $('.progress-bar-info').attr('style', 'width:' + recyclePer + '%');
@@ -172,8 +179,15 @@ setTimeout(function(){
   $('.processPer').text(combine + '%');
   $('.progress-bar-goal').attr('style', 'left:'+ goalLine +'px');
   // $('.progress-bar-success').text(compostPer + '%');
+}
 
-}, 800)
+$(document).ready(function(){
+  $('.btn').on('click', function(){
+    console.log('hello')
+    numgoal = $('.form-control').val()
+    changeGoal();
+  })
+});
 
 
 
